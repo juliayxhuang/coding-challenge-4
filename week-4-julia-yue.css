@@ -1,12 +1,20 @@
 body {
-    display: flex;
-    margin: 2em;
-    padding: 2em;
-    background-color: aliceblue;
+        display: flex;
+        margin: 2em;
+        padding: 2em;
+        background-color: aliceblue;
+        position: relative;
+        min-height: 70vh;
+        align-items: center;
+        justify-content: center;
+}
+
+/* Scene container to contain flying bees */
+.scene {
     position: relative;
-    min-height: 70vh;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 60vh;
+    overflow: hidden;
 }
 
 h1{
@@ -16,11 +24,8 @@ h1{
 
 .bee {
     display: block;
-    bottom: 3em;
-    right: 3em;
     position: absolute;
     left: -6rem;
-    top: 50%;
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
@@ -30,8 +35,15 @@ h1{
     animation: fly 6s linear infinite;
 }
 
+/* Vertical positions and staggered timings */
+.bee.top    { top: 30%;    transform: translateY(-50%); animation-delay: 0s; }
+.bee        { top: 45%;    transform: translateY(-50%); animation-delay: 2s; }
+.bee.bottom { top: 60%;    transform: translateY(-50%); animation-delay: 0.8s; }
+.bee.below  { top: 75%;    transform: translateY(-50%); animation-delay: 1s; }
+
 .bee:hover {
     background-color: lightgoldenrodyellow;
+    cursor: url('media/carrot.png') 18 18;
 }
 
 @keyframes fly {
@@ -56,15 +68,6 @@ h1{
 /* Small responsive tweak so the bee doesn't block content on very small screens */
 @media (max-width: 480px) {
     .bee { width: 2.5rem; height: 2.5rem; animation-duration: 5s; }
-}
-
-
-
-
-
-body {
-  margin: 0;
-  background: white;
 }
 
 /* Flower base */

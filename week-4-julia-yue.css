@@ -62,53 +62,67 @@ h1{
 
 
 
-
 body {
   margin: 0;
   background: white;
 }
 
-/* Flower container */
+/* Flower base */
 .flower {
   position: absolute;
-  top: 30em;
-  left: 17em;
-  width: 120px;
-  height: 120px;
-
-  animation: spin 6s linear infinite;
+  width: 100px;
+  height: 100px;
+  animation: spin linear infinite;
 }
+
+/* Different positions */
+.blue   { top: 130px; left: 30px;  animation-duration: 6s; }
+.green  { top: 120px; left: 180px; animation-duration: 8s; }
+.pink   { top: 360px; right: 160px; animation-duration: 5s; }
+.purple { bottom: 60px; left: 120px; animation-duration: 7s; }
 
 /* Petals */
 .petal {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  background: #4da6ff;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  top: 30px;
-  left: 30px;
+  top: 25px;
+  left: 25px;
 }
 
 /* Position petals */
-.p1 { transform: translateY(-40px); }
-.p2 { transform: translateY(40px); }
-.p3 { transform: translateX(-40px); }
-.p4 { transform: translateX(40px); }
+.petal:nth-child(1) { transform: translateY(-30px); }
+.petal:nth-child(2) { transform: translateY(30px); }
+.petal:nth-child(3) { transform: translateX(-30px); }
+.petal:nth-child(4) { transform: translateX(30px); }
 
-/* Flower center */
+/* Centers */
 .center {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background: #0059b3;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  top: 40px;
-  left: 40px;
+  top: 35px;
+  left: 35px;
 }
+
+/* Colors */
+.blue .petal   { background: rgb(255, 245, 154); }
+.blue .center  { background: #ef875e; }
+
+.green .petal  { background: #66cc66; }
+.green .center { background: #2d862d; }
+
+.pink .petal   { background: #ff99cc; }
+.pink .center  { background: #cc0066; }
+
+.purple .petal { background: #c299ff; }
+.purple .center{ background: #6600cc; }
 
 /* Spin animation */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
+

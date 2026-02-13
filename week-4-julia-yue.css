@@ -1,13 +1,17 @@
 body {
+    display: flex;
     margin: 2em;
     padding: 2em;
     background-color: aliceblue;
     position: relative;
     min-height: 70vh;
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: pink;
 }
 
 .bee {

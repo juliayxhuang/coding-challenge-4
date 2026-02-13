@@ -14,3 +14,10 @@ h1{
 .bee:hover {
     background-color: lightgoldenrodyellow;
 }
+
+.blue-flower {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(146, 211, 255);
+    top: 100px;
+    left: 300px;
+}

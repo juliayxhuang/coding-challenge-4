@@ -1,18 +1,45 @@
+body {
+    margin: 2em;
+    padding: 2em;
+    background-color: aliceblue;
+    position: relative;
+    min-height: 70vh;
+}
+
 h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .bee {
+    display: block;
     bottom: 3em;
     right: 3em;
-    width: 4em;
-    height: 3em;
+    position: absolute;
+    left: -6rem;
+    top: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
-    background-color: yellow;
+    background: linear-gradient(90deg, #ffde59 60%, #222 60% 75%, #ffde59 75%);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-50%) translateX(0);
+    animation: fly 6s linear infinite;
 }
 
 .bee:hover {
     background-color: lightgoldenrodyellow;
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(-50%) translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-55%) translateX(calc(100vw - 5rem)) rotate(10deg);
+    }
+    100% {
+        transform: translateY(-50%) translateX(calc(100vw + 8rem)) rotate(0deg);
+    }
 }
 
 .blue-flower {
@@ -20,4 +47,9 @@ h1{
     color: rgb(146, 211, 255);
     top: 100px;
     left: 300px;
+}
+
+/* Small responsive tweak so the bee doesn't block content on very small screens */
+@media (max-width: 480px) {
+    .bee { width: 2.5rem; height: 2.5rem; animation-duration: 5s; }
 }
